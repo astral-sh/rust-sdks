@@ -43,6 +43,8 @@ jobs:
     name: Test (${{ matrix.target }})
     runs-on: ${{ matrix.os }}
     steps:
+      - if: runner.os == 'macOS'
+        uses: astral-sh/github-actions/demudhra@7aa50a3def9f5428c532b0ae972d1e5b357de5a5 # 2026.11.03.0
       - uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
         with:
           submodules: true
